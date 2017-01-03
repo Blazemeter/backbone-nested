@@ -10,10 +10,10 @@
 (function(root, factory){
   if (typeof exports !== 'undefined') {
       // Define as CommonJS export:
-      module.exports = factory(require("jquery"), require("underscore"), require("backbone"));
+      module.exports = factory(require("jquery"), require("lodash"), require("backbone"));
   } else if (typeof define === 'function' && define.amd) {
       // Define as AMD:
-      define(["jquery", "underscore", "backbone"], factory);
+      define(["jquery", "lodash", "backbone"], factory);
   } else {
       // Just run it:
       factory(root.$, root._, root.Backbone);
@@ -185,7 +185,7 @@
         attrStr = Backbone.NestedModel.createAttrStr(aryPath);
         this.trigger('remove:' + attrStr, this, oldEl);
         for (var aryCount = aryPath.length; aryCount >= 1; aryCount--) {
-          attrStr = Backbone.NestedModel.createAttrStr(_.first(aryPath, aryCount));
+          attrStr = Backbone.NestedModel.createAttrStr(_.head(aryPath, aryCount));
           this.trigger('change:' + attrStr, this, oldEl);
         }
         this.trigger('change', this, oldEl);
@@ -340,7 +340,7 @@
 
     createAttrStr: function(attrPath){
       var attrStr = attrPath[0];
-      _.each(_.rest(attrPath), function(attr){
+      _.each(_.tail(attrPath), function(attr){
         attrStr += _.isNumber(attr) ? ('[' + attr + ']') : ('.' + attr);
       });
 
