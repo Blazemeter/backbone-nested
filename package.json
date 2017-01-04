@@ -6,20 +6,19 @@
     "test": "bower install; grunt"
   },
   "dependencies": {
-    "jquery": ">=1.8.3",
-    "underscore": ">=1.5.0",
-    "lodash": "4.17.1"
+    "lodash": "4.17.1",
+    "underscore": ">=1.5.0"
   },
   "devDependencies": {
+    "bower": "*",
     "grunt": "~0.4.1",
-    "grunt-contrib-qunit": "~0.2.2",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-mocha-test": "~0.8.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "jslitmus": "~0.1.0",
-    "mocha": "~1.17.1",
     "grunt-cli": "*",
-    "bower": "*"
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-qunit": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.8.2",
+    "jslitmus": "~0.1.0",
+    "mocha": "~1.17.1"
   },
   "homepage": "http://afeld.github.com/backbone-nested/",
   "main": "backbone-nested.js",
